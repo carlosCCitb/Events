@@ -7,7 +7,7 @@ public class Platform : MonoBehaviour, IDisposer
     public void Dispose(GameObject obj)
     {
         obj.SetActive(true);
-        obj.GetComponent<ICollectable>().Collected(false);
+        //obj.GetComponent<ICollectable>().Collected(false);
         obj.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

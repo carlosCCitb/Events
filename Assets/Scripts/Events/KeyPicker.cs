@@ -15,12 +15,13 @@ public class KeyPicker : MonoBehaviour
             //Debug.DrawRay(ray.origin, ray.direction);
             if (hit.collider!= null)
             {
-                if(hit.collider.TryGetComponent<ICollectable>(out ICollectable icoll))
+                /*if(hit.collider.TryGetComponent<ICollectable>(out ICollectable icoll))
                 {
                     icoll.Collected();
                     keysInventory.Push(hit.collider.gameObject);
                 }
-                else if(hit.collider.TryGetComponent<IDisposer>(out IDisposer idisp))
+                else */
+                if (hit.collider.TryGetComponent<IDisposer>(out IDisposer idisp))
                 {
                     try
                     {
