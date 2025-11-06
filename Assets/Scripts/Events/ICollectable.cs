@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface ICollectable
 {
-    public void Collected();
-    public void Collected(bool f);
+    public void Collected(bool b);
 }

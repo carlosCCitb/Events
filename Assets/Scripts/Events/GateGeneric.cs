@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GateGeneral : MonoBehaviour
+public class GateGeneric : MonoBehaviour
 {
     private Animator _animator;
     private void Awake()
@@ -11,14 +11,14 @@ public class GateGeneral : MonoBehaviour
     }
     private void OnEnable()
     {
-        KeyGeneral.OnGetKey += Activate;
+        KeyGeneric.pickedGenericKey += OpenDoor;
     }
     private void OnDisable()
     {
-        KeyGeneral.OnGetKey -= Activate;
+        KeyGeneric.pickedGenericKey -= OpenDoor;
     }
-    private void Activate(bool act)
+    public void OpenDoor(bool b)
     {
-        _animator.SetBool("Open", act);
+        _animator.SetBool("Open", b);
     }
 }

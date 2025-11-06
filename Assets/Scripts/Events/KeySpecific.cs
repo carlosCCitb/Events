@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+
 public class KeySpecific : MonoBehaviour, ICollectable
 {
-    public event Action<bool> OnGetKey = delegate { }; //STATIC
-    public void Collected()
+    public event Action<bool> pickedSpecificKey = delegate{};
+    public void Collected(bool b)
     {
-        Collected(true);
-        gameObject.SetActive(false);
+        pickedSpecificKey.Invoke(b);
     }
-    public void Collected(bool f)
-    {
-        OnGetKey.Invoke(f);
-    }
+
 }
